@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #d9e6ff;
+    color: #241b13;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+.header {
+    padding: 30px 40px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+.main {
+    padding-bottom: 260px;
+}
+
+.menu-btn {
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.header-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.header-right img {
+    width: 18px;
+}
+
+/* HERO */
+.hero {
+    margin-top: 60px;
+}
+
+.hero h1 {
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+.byeme {
+    margin-top: -10px;
+    font-family: "Kapakana", cursive;
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 0.9;
+    color: #2b2b2b;
+}
+
+
+/* PROJECTS */
+.projects {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    background: transparent;
+}
+
+.project-row {
+    display: flex;
+    gap: 0px;
+    padding: 0 60px;
+    align-items: flex-end;
+}
+
+.project-item {
+    position: relative;
+    overflow: hidden;
+    transition: flex 0.4s ease;
+    flex: 1;
+    cursor: pointer;
+}
+
+.project-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: height 0.4s ease;
+}
+
+
+.project-item span {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-item:hover {
+    flex: 2;
+}
+
+.project-item:hover span {
+    opacity: 1;
+}
+@media (max-width: 768px) {
+
+    .project-row {
+        padding: 0 20px;
+        gap: 10px;
+    }
+
+    .project-item img {
+        height: 120px;
+    }
+
+    .project-item:hover img {
+        height: 160px;
+    }
+
+    .byeme {
+        font-size: 4.5rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    #side-menu {
+        width: 80%;
+    }
+}
+
+/* SIDE MENU */
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#side-menu {
+    position: fixed;
+    top: 0;
+    left: -50%;
+    width: 50%;
+    height: 100vh;
+    background: rgba(255, 243, 196, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 40px;
+    transition: left 0.45s ease;
+    z-index: 1000;
+}
+
+#side-menu.active {
+    left: 0;
+}
+
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.menu-content {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.menu-content a {
+    text-decoration: none;
+    color: #2b2b2b;
+    font-size: 20px;
+}
+
+/* BOOTSTRAP OVERRIDES */
+.accordion-button {
+    background: none;
+    padding: 0;
+    font-weight: 500;
+}
+
+.accordion-body a {
+    display: block;
+    margin: 10px 0;
+}
